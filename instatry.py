@@ -41,5 +41,5 @@ def get_instagram_data():
         return jsonify({'error': 'User not found'}), 404
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=5050, debug=True)
+    app.run()
 
