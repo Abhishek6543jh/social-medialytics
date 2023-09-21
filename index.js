@@ -1,25 +1,27 @@
-const { spawn } = require('child_process');
-var usr ="ravitechseries"
-// Define the Python script and its arguments
-const pythonScript = '/Users/kalthireddyabhishek/lab/webprojetc/instagram.py'; // Replace with the path to your Python script
-const pythonArgs = [usr]; // Replace with any arguments your Python script requires
+const express = require('express');
+const fetch = require('node-fetch');
+const app = express();
+const port = 3000; // You can choose any available port
+const usr = "ravitechseries"; // Replace with the desired Instagram username
 
-// Run the Python script
-const pythonProcess = spawn('python3', [pythonScript, ...pythonArgs]);
+app.get('/instafetch', async (req, res) => {
+  try {
+    // Replace with the actual URL of your Flask server
+    const flaskServerUrl = 'http://localhost:5050/instadata?username=' + usr;
 
-// Handle Python script output
-pythonProcess.stdout.on('data', (data) => {
-  console.log(`Python Output: ${data}`);
+    const response = await fetch(flaskServerUrl);
+    if (response.ok) {
+      const jsonData = await response.json();
+      res.json(jsonData);
+    } else {
+      res.status(response.status).json({ error: 'Failed to fetch Instagram data from Flask server' });
+    }
+  } catch (error) {
+    console.error(`Error: ${error}`);
+    res.status(500).json({ error: 'An error occurred while fetching Instagram data' });
+  }
 });
 
-// Handle any errors that occur
-pythonProcess.stderr.on('data', (data) => {
-  console.error(`Error: ${data}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
-
-// Handle the Python script's exit event
-pythonProcess.on('close', (code) => {
-  console.log(`Python script exited with code ${code}`);
-});
-
-

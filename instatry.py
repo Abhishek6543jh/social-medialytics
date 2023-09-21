@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import instaloader
-import sys
+
 
 app = Flask(__name__)
 
@@ -41,4 +41,5 @@ def get_instagram_data():
         return jsonify({'error': 'User not found'}), 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='localhost', port=5050, debug=True)
+
