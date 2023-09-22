@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 import instaloader
 
-
 app = Flask(__name__)
 
 @app.route('/instadata', methods=['GET'])
@@ -20,19 +19,25 @@ def get_instagram_data():
         # Replace 'username' with the actual Instagram username
         profile = instaloader.Profile.from_username(L.context, user)
 
-        totallikes = 0
-
-        # Iterate through the user's posts and calculate the total likes
-        for post in profile.get_posts():
-            totallikes += post.likes
-
+        total_likes = 0
+        total_comments = 0
+        total_posts = 0
         followers = profile.followers
-        engagement_rate = (totallikes / followers) * 100
+
+        # Iterate through the user's posts and calculate total likes, comments, and count of posts
+        for post in profile.get_posts():
+            total_likes += post.likes
+            total_comments += post.comments
+            total_posts += 1
+
+        engagement_rate = ((total_likes + total_comments) / (total_posts * followers)) * 100
 
         # Return the Instagram data as JSON
         return jsonify({
             'username': user,
-            'total_likes': totallikes,
+            'total_likes': total_likes,
+            'total_comments': total_comments,
+            'total_posts': total_posts,
             'followers': followers,
             'engagement_rate': engagement_rate
         }), 200
@@ -42,4 +47,3 @@ def get_instagram_data():
 
 if __name__ == '__main__':
     app.run()
-

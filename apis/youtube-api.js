@@ -1,6 +1,10 @@
+const express = require('express');
 const { google } = require('googleapis');
 
-// Replace with your YouTube Data API credentials (API key or OAuth 2.0 credentials)
+const app = express();
+const port = 3000;
+
+// Replace 'YOUR_YOUTUBE_DATA_API_KEY_HERE' with your actual API key
 const API_KEY = 'AIzaSyBEtE0Ro3OIqAEEdd9L0LHEg85WDFGYkkY';
 
 const youtube = google.youtube({
@@ -8,9 +12,10 @@ const youtube = google.youtube({
   auth: API_KEY,
 });
 
-async function getChannelDataById(channelId) {
+app.get('/channelData/:channelId', async (req, res) => {
+  const channelId = req.params.channelId;
+
   try {
-    // Get channel statistics (subscribers count)
     const channelResponse = await youtube.channels.list({
       part: 'statistics',
       id: channelId,
@@ -23,42 +28,40 @@ async function getChannelDataById(channelId) {
     const channelStatistics = channelResponse.data.items[0].statistics;
     const subscribersCount = parseInt(channelStatistics.subscriberCount, 10);
 
-    // Get the channel's uploaded videos
     const videoResponse = await youtube.search.list({
       part: 'id',
       channelId: channelId,
-      maxResults: 50, // Maximum number of videos to retrieve (adjust as needed)
+      maxResults: 50,
     });
 
     const videoIds = videoResponse.data.items.map((item) => item.id.videoId);
     const videoIdsString = videoIds.join(',');
 
-    // Get video statistics (likes count) for the channel's videos
     const videoStatsResponse = await youtube.videos.list({
       part: 'statistics',
       id: videoIdsString,
     });
 
     const videoStats = videoStatsResponse.data.items;
-    const videoLikesCount = videoStats.reduce(
+    const totalLikesCount = videoStats.reduce(
       (totalLikes, video) => totalLikes + parseInt(video.statistics.likeCount, 10),
       0
     );
 
-    return { subscribersCount, videoLikesCount };
+    // Calculate average post likes
+    const averagePostLikes = totalLikesCount / videoStats.length;
+
+    // Calculate engagement rate
+    const engagementRate = (averagePostLikes / subscribersCount)*1000;
+
+    const responseData = { subscribersCount, averagePostLikes, engagementRate };
+    res.json(responseData);
   } catch (error) {
     console.error('Error:', error.message);
-    throw error;
+    res.status(500).json({ error: error.message });
   }
-}
+});
 
-// Example usage:
-const channelId = 'UCVvhor7edia2NkWt0FGKVIA'; // Replace with the actual channel ID
-getChannelDataById(channelId)
-  .then((data) => {
-    console.log(`Subscribers: ${data.subscribersCount}`);
-    console.log(`Total Video Likes: ${data.videoLikesCount}`);
-  })
-  .catch((error) => {
-    console.error('Error:', error.message);
-  });
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
