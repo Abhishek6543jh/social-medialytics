@@ -237,6 +237,7 @@ body, html {
     </div>
         
     </div>
+<div class ="youtube-container">
 <!-- youtube template part -->
     <div class="insta-container">
         <section class="content">
@@ -277,7 +278,7 @@ body, html {
                         <h2 class="card-heading">Avg Comments</h2>
                         <p class="card-content"><% if (locals.youtubeData) { %>
                         
-                        <p> <%= locals.youtubeData.averagePostLikes %></p>
+                        <p> <%= locals.youtubeData.averagePostComments %></p>
                       
                         <% }%></p>
                     </div>
@@ -285,7 +286,7 @@ body, html {
                         <h2 class="card-heading">No. of Posts</h2>
                         <p class="card-content"><% if (locals.youtubeData) { %>
                         
-                        <p>: <%= locals.youtubeData.channelName %></p>
+                        <p>: <%= locals.youtubeData.numberOfPosts %></p>
                       
                         <% }%></p>
                     </div>
@@ -297,24 +298,13 @@ body, html {
         
             <h1><% if (locals.youtubeData) { %>
                         
-                        <p> <%= locals.youtubeData.engagementRate %></p>
+                        <p> <%= locals.youtubeData.engagementRate%></p>
                       
                         <% }%></h1>
     </div>
         
     </div>
 </div>
-
-    <% if (locals.instagramData) { %>
-    <h2>Instagram Data:</h2>
-    <p>Username: <%= locals.instagramData.username %></p>
-    <!-- Add other Instagram data fields here as needed -->
-    <% } %>
-
-    <% if (locals.youtubeData) { %>
-    <h2>YouTube Data:</h2>
-    <p>Subscribers Count: <%= locals.youtubeData.subscribersCount %></p>
-    <!-- Add other YouTube data fields here as needed -->
-    <% } %>
+</div>
 </body>
 </html>
