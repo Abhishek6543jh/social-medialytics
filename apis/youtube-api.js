@@ -7,6 +7,7 @@ const port = 3030;
 // Replace 'YOUR_YOUTUBE_DATA_API_KEY_HERE' with your actual API key
 const API_KEY = 'AIzaSyBEtE0Ro3OIqAEEdd9L0LHEg85WDFGYkkY';
 
+
 const youtube = google.youtube({
   version: 'v3',
   auth: API_KEY,
@@ -32,6 +33,7 @@ app.get('/channelData/:channelId', async (req, res) => {
       part: 'id',
       channelId: channelId,
       maxResults: 50,
+      type: 'video', // Specify the type as 'video' to exclude other content types like playlists
     });
 
     const videoIds = videoResponse.data.items.map((item) => item.id.videoId);
@@ -48,13 +50,27 @@ app.get('/channelData/:channelId', async (req, res) => {
       0
     );
 
+    const totalCommentsCount = videoStats.reduce(
+      (totalComments, video) => totalComments + parseInt(video.statistics.commentCount, 10),
+      0
+    );
+
     // Calculate average post likes
     const averagePostLikes = totalLikesCount / videoStats.length;
 
-    // Calculate engagement rate
-    const engagementRate = (averagePostLikes / subscribersCount)*1000;
+    // Calculate average post comments
+    const averagePostComments = totalCommentsCount / videoStats.length;
 
-    const responseData = { subscribersCount, averagePostLikes, engagementRate };
+    // Calculate engagement rate
+    const engagementRate = (averagePostLikes / subscribersCount) * 1000;
+
+    const responseData = {
+      subscribersCount,
+      averagePostLikes,
+      averagePostComments,
+      engagementRate,
+      numberOfPosts: videoStats.length,
+    };
     res.json(responseData);
   } catch (error) {
     console.error('Error:', error.message);

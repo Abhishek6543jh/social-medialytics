@@ -180,7 +180,7 @@ body, html {
                     <p class="username"><% if (locals.instagramData) { %>
                         
                         <p>@<%= locals.instagramData.username %></p>
-                        <!-- Add other Instagram data fields here as needed -->
+                       
                         <% } %></p>
                 </div>
         </section>
@@ -192,7 +192,7 @@ body, html {
                         <p class="card-content"><% if (locals.instagramData) { %>
                         
                             <p><%= locals.instagramData.followers %></p>
-                            <!-- Add other Instagram data fields here as needed -->
+                            
                             <% } %></p>
                     </div>
                     <div class="card">
@@ -201,7 +201,7 @@ body, html {
                             <% if (locals.instagramData) { %>
                         
                                 <p><%= locals.instagramData.total_likes %></p>
-                                <!-- Add other Instagram data fields here as needed -->
+                              
                                 <% } %>
                         </p>
                     </div>
@@ -212,7 +212,7 @@ body, html {
                         <p class="card-content"><% if (locals.instagramData) { %>
                         
                             <p><%= locals.instagramData.total_comments %></p>
-                            <!-- Add other Instagram data fields here as needed -->
+                            
                             <% } %></p>
                     </div>
                     <div class="card">
@@ -220,7 +220,7 @@ body, html {
                         <p class="card-content"><% if (locals.instagramData) { %>
                         
                             <p><%= locals.instagramData.total_posts %></p>
-                            <!-- Add other Instagram data fields here as needed -->
+                           
                             <% } %></p>
                     </div>
                 </div>
@@ -229,7 +229,11 @@ body, html {
         <div class="user-card">
         <h1>ENGAGEMENT RATE</h1>
         
-            <h1>45%</h1>
+            <h1><% if (locals.instagramData) { %>
+                        
+                <p><%= locals.instagramData.engagement_rate %></p>
+               
+                <% } %></h1>
     </div>
         
     </div>
@@ -241,10 +245,10 @@ body, html {
                     <img src="https://cdn.pixabay.com/photo/2021/12/10/16/38/youtube-6860916_1280.png" alt="User Avatar">
                 </div>
                 <div class="user-info">
-                    <p class="username"><% if (locals.instagramData) { %>
+                    <p class="username"> <% if (locals.youtubeData) { %>
                         
-                        <p>@<%= locals.instagramData.username %></p>
-                        
+                        <p> <%= locals.youtubeData.channelName %></p>
+                      
                         <% } %></p>
                 </div>
         </section>
@@ -252,22 +256,38 @@ body, html {
             <div class="user-card">
                 <div class="row">
                     <div class="card">
-                        <h2 class="card-heading">Followers</h2>
-                        <p class="card-content">1000</p>
+                        <h2 class="card-heading">subscibers</h2>
+                        <p class="card-content"><% if (locals.youtubeData) { %>
+                        
+                            <p> <%= locals.youtubeData.subscribersCount %></p>
+                          
+                            <% }%></p>
                     </div>
                     <div class="card">
                         <h2 class="card-heading">Avg Likes</h2>
-                        <p class="card-content">500</p>
+                        <p class="card-content"><% if (locals.youtubeData) { %>
+                        
+                        <p> <%= locals.youtubeData.averagePostLikes %></p>
+                      
+                        <% }%></p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="card">
                         <h2 class="card-heading">Avg Comments</h2>
-                        <p class="card-content">200</p>
+                        <p class="card-content"><% if (locals.youtubeData) { %>
+                        
+                        <p> <%= locals.youtubeData.averagePostLikes %></p>
+                      
+                        <% }%></p>
                     </div>
                     <div class="card">
                         <h2 class="card-heading">No. of Posts</h2>
-                        <p class="card-content">50</p>
+                        <p class="card-content"><% if (locals.youtubeData) { %>
+                        
+                        <p>: <%= locals.youtubeData.channelName %></p>
+                      
+                        <% }%></p>
                     </div>
                 </div>
             </div>
@@ -275,7 +295,11 @@ body, html {
         <div class="user-card">
         <h1>ENGAGEMENT RATE</h1>
         
-            <h1>45%</h1>
+            <h1><% if (locals.youtubeData) { %>
+                        
+                        <p> <%= locals.youtubeData.engagementRate %></p>
+                      
+                        <% }%></h1>
     </div>
         
     </div>
