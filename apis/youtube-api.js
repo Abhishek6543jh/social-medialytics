@@ -2,7 +2,7 @@ const express = require('express');
 const { google } = require('googleapis');
 
 const app = express();
-const port = 3000;
+const port = 3030;
 
 // Replace 'YOUR_YOUTUBE_DATA_API_KEY_HERE' with your actual API key
 const API_KEY = 'AIzaSyBEtE0Ro3OIqAEEdd9L0LHEg85WDFGYkkY';

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channel Data</title>
+</head>
+<body>
+    <h1>Fetch Instagram and YouTube Data</h1>
+    <form method="POST" action="http://localhost:3000/dataobtain">
+        <label for="instagramUsername">Instagram Channel Name:</label>
+        <input type="text" id="instagramUsername" name="instagramUsername" required><br>
+
+        <label for="youtubeChannelId">YouTube Channel ID:</label>
+        <input type="text" id="youtubeChannelId" name="youtubeChannelId" required><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <% if (locals.instagramData) { %>
+    <h2>Instagram Data:</h2>
+    <p>Username: <%= locals.instagramData.username %></p>
+    <!-- Add other Instagram data fields here as needed -->
+    <% } %>
+
+    <% if (locals.youtubeData) { %>
+    <h2>YouTube Data:</h2>
+    <p>Subscribers Count: <%= locals.youtubeData.subscribersCount %></p>
+    <!-- Add other YouTube data fields here as needed -->
+    <% } %>
+</body>
+</html>
