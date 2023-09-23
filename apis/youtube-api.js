@@ -7,7 +7,6 @@ const port = 3030;
 // Replace 'YOUR_YOUTUBE_DATA_API_KEY_HERE' with your actual API key
 const API_KEY = 'AIzaSyBEtE0Ro3OIqAEEdd9L0LHEg85WDFGYkkY';
 
-
 const youtube = google.youtube({
   version: 'v3',
   auth: API_KEY,
@@ -33,7 +32,6 @@ app.get('/channelData/:channelId', async (req, res) => {
       part: 'id',
       channelId: channelId,
       maxResults: 50,
-      type: 'video', // Specify the type as 'video' to exclude other content types like playlists
     });
 
     const videoIds = videoResponse.data.items.map((item) => item.id.videoId);
