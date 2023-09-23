@@ -278,7 +278,7 @@ body, html {
                         <h2 class="card-heading">Avg Comments</h2>
                         <p class="card-content"><% if (locals.youtubeData) { %>
                         
-                        <p> <%= locals.youtubeData.averagePostLikes %></p>
+                        <p> <%= locals.youtubeData.averagePostComments %></p>
                       
                         <% }%></p>
                     </div>
@@ -286,7 +286,7 @@ body, html {
                         <h2 class="card-heading">No. of Posts</h2>
                         <p class="card-content"><% if (locals.youtubeData) { %>
                         
-                        <p>: <%= locals.youtubeData.channelName %></p>
+                        <p>: <%= locals.youtubeData.numberOfPosts %></p>
                       
                         <% }%></p>
                     </div>
