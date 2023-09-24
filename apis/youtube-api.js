@@ -16,8 +16,9 @@ app.get('/channelData/:channelId', async (req, res) => {
   const channelId = req.params.channelId;
 
   try {
+    // Get channel data including the title
     const channelResponse = await youtube.channels.list({
-      part: 'statistics',
+      part: 'snippet,statistics',
       id: channelId,
     });
 
@@ -25,8 +26,10 @@ app.get('/channelData/:channelId', async (req, res) => {
       throw new Error('Channel not found.');
     }
 
+    const channelSnippet = channelResponse.data.items[0].snippet;
     const channelStatistics = channelResponse.data.items[0].statistics;
     const subscribersCount = parseInt(channelStatistics.subscriberCount, 10);
+    const channelName = channelSnippet.title; // Extract the channel name
 
     const videoResponse = await youtube.search.list({
       part: 'id',
@@ -63,6 +66,7 @@ app.get('/channelData/:channelId', async (req, res) => {
     const engagementRate = (averagePostLikes / subscribersCount) * 1000;
 
     const responseData = {
+      channelName, // Include the channel name in the response
       subscribersCount,
       averagePostLikes,
       averagePostComments,
