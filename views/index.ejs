@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Channel Data</title>
     <style>
+
           body.light-mode {
             background-color: #fff;
             color: #000;
@@ -220,8 +221,10 @@ body, html {
             <label for="youtubeChannelId">YouTube Channel ID:</label>
             <input type="text" id="youtubeChannelId" name="youtubeChannelId" required placeholder="YouTube channel-id">
             <button type="submit">Analyze</button>
+            <p id="wait-message" style="display: none;">Please wait for a few minutes...</p>
         </form>
     </div>
+   
  <!-- insta template part -->
     <div class="insta-container">
         <section class="content">
@@ -389,6 +392,23 @@ body, html {
 
     // Call the function to initialize the toggle
     toggleDarkMode();
+    // Function to handle form submission
+function handleSubmit() {
+  // Show the "Please wait" message
+  const waitMessage = document.getElementById('wait-message');
+  waitMessage.style.display = 'block';
+
+  // Disable the "Analyze" button to prevent multiple submissions
+  const analyzeButton = document.getElementById('analyze-button');
+  analyzeButton.disabled = true;
+
+  // You can continue with the form submission here...
+}
+
+// Attach the handleSubmit function to the form submission
+const form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
+
 </script>
 </body>
 </html>
