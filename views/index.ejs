@@ -244,6 +244,22 @@
             flex: 1; /* Make them take equal space */
             max-width: calc(50% - 10px); /* Set the maximum width (minus gap) for each card */
         }
+        /* Add styles to the engagement rate paragraph (p1) */
+/* Add unique styles to the engagement rate paragraph (p1) */
+.engagement-rate {
+    font-size: 50px;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin-top: -53px;
+    text-transform: uppercase;
+    border: 1px solid #ff6b6b;
+    padding: 56px;
+    border-radius: 120px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+}
+
+
     </style>
 </head>
 <body class="light-mode">
@@ -323,7 +339,7 @@
                                 </div>
                             </div>
                             <h1>Engagement Rate</h1>
-                            <p>
+                            <p class = "engagement-rate">
                                 <% if (locals.instagramData) { %>
                                     <%= locals.instagramData.engagement_rate %>
                                 <% } %>
@@ -383,7 +399,7 @@
                                 </div>
                             </div>
                             <h1>Engagement Rate</h1>
-                            <p>
+                            <p class="engagement-rate">
                                 <% if (locals.youtubeData) { %>
                                     <%= locals.youtubeData.engagementRate %>
                                 <% } %>
