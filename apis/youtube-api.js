@@ -12,6 +12,10 @@ const youtube = google.youtube({
   auth: API_KEY,
 });
 
+function roundToDecimal(number, decimalPlaces) {
+  return parseFloat(number.toFixed(decimalPlaces));
+}
+
 app.get('/channelData/:channelId', async (req, res) => {
   const channelId = req.params.channelId;
 
@@ -56,14 +60,14 @@ app.get('/channelData/:channelId', async (req, res) => {
       0
     );
 
-    // Calculate average post likes
-    const averagePostLikes = totalLikesCount / videoStats.length;
+    // Calculate average post likes and round off to 2 decimal places
+    const averagePostLikes = roundToDecimal(totalLikesCount / videoStats.length, 2);
+  
+    // Calculate average post comments and round off to 2 decimal places
+    const averagePostComments = roundToDecimal(totalCommentsCount / videoStats.length, 2);
 
-    // Calculate average post comments
-    const averagePostComments = totalCommentsCount / videoStats.length;
-
-    // Calculate engagement rate
-    const engagementRate = (averagePostLikes / subscribersCount) * 1000;
+    // Calculate engagement rate and round off to 2 decimal places
+    const engagementRate = roundToDecimal((averagePostLikes / subscribersCount) * 1000, 2);
 
     const responseData = {
       channelName, // Include the channel name in the response

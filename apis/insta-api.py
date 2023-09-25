@@ -32,6 +32,9 @@ def get_instagram_data():
 
         engagement_rate = ((total_likes + total_comments) / (total_posts * followers)) * 100
 
+        # Round off the engagement rate to two decimal places
+        engagement_rate = round(engagement_rate, 2)
+
         # Return the Instagram data as JSON
         return jsonify({
             'username': user,
