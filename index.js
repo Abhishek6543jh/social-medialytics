@@ -13,6 +13,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // Define a route for the root path that renders the form
+
 app.get('/', (req, res) => {
   res.render('index.ejs');
 });
