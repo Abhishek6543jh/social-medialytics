@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios'); // Import axios for making HTTP requests
 const ejs = require('ejs');
 const app = express();
-const port = 3000;
+const port = 3030;
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -91,11 +91,11 @@ app.post('/dataobtain', async (req, res) => {
   
     try {
       // Fetch data from Instagram API
-      const instagramResponse = await axios.get(`https://abhishekw1w21.pythonanywhere.com/instadata?username=ravitechseries${instagramUsername}`);
+      const instagramResponse = await axios.get(`https://abhishekw1w21.pythonanywhere.com/instadata?username=${instagramUsername}`);
       const instagramData = instagramResponse.data;
   
       // Fetch data from YouTube API
-      const youtubeResponse = await axios.get(`http://localhost:3030/channelData/${youtubeChannelId}`);
+      const youtubeResponse = await axios.get(`https://yotube-api-5fmc.onrender.com/channelData/${youtubeChannelId}`);
       const youtubeData = youtubeResponse.data;
   
       // Set .locals to make data available to the EJS template
