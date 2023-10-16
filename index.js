@@ -85,31 +85,41 @@ app.post("/regester/reg",(req,res)=>{
 });
 
 // Handle the POST request for data submission
+// Handle the POST request for data submission
 app.post('/dataobtain', async (req, res) => {
-    const instagramUsername = req.body.instagramUsername;
-    const youtubeChannelId = req.body.youtubeChannelId;
-  
-    try {
+  const instagramUsername = req.body.instagramUsername;
+  const youtubeChannelId = req.body.youtubeChannelId;
+
+  let instagramData, youtubeData;
+
+  try {
       // Fetch data from Instagram API
       const instagramResponse = await axios.get(`https://abhishekw1w21.pythonanywhere.com/instadata?username=${instagramUsername}`);
-      const instagramData = instagramResponse.data;
-  
+      instagramData = instagramResponse.data;
+  } catch (instagramError) {
+      console.error('Instagram Error:', instagramError.message);
+      // Handle the error or set a default value for Instagram data
+      instagramData = { followers: 0, total_likes: 0, total_comments: 0, total_posts: 0, engagement_rate: 0 };
+  }
+
+  try {
       // Fetch data from YouTube API
       const youtubeResponse = await axios.get(`https://yotube-api-5fmc.onrender.com/channelData/${youtubeChannelId}`);
-      const youtubeData = youtubeResponse.data;
-  
-      // Set .locals to make data available to the EJS template
-      res.locals.instagramData = instagramData;
-      res.locals.youtubeData = youtubeData;
-  
-      // Render the EJS template with the fetched data
-      res.render('index.ejs');
-    } catch (error) {
-      console.error('Error:', error.message);
-      res.status(500).json({ error: error.message });
-    }
-  });
-  
+      youtubeData = youtubeResponse.data;
+  } catch (youtubeError) {
+      console.error('YouTube Error:', youtubeError.message);
+      // Handle the error or set a default value for YouTube data
+      youtubeData = { subscribersCount: 0, averagePostLikes: 0, averagePostComments: 0, numberOfPosts: 0, engagementRate: 0 };
+  }
+
+  // Set .locals to make data available to the EJS template
+  res.locals.instagramData = instagramData;
+  res.locals.youtubeData = youtubeData;
+
+  // Render the EJS template with the fetched data
+  res.render('index.ejs');
+});
+
 // Start the server and listen on the specified port
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
