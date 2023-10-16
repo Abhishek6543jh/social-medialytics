@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Channel Data</title>
     <style>
-
-          body.light-mode {
+        body.light-mode {
             background-color: #fff;
             color: #000;
         }
@@ -14,168 +13,66 @@
         /* Dark Mode Styles */
         body.dark-mode {
             background-color: #000;
+            color: #83daf0;
+        }
+        .navbar {
+            background-color: #007bff;
             color: #fff;
+            padding: 10px 0;
+            text-align: center;
         }
-        /* Add this style to your existing <style> block or create a new one */
 
-.navbar {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 0;
-}
-
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.navbar li {
-    display: inline;
-    margin: 0 20px;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.navbar a:hover {
-    text-decoration: underline;
-}
-
-    
-/* Reset some default styles */
-body, html {
-    margin: 0;
-    padding: 0;
-}
-.insta-container h1{
-   margin-left: auto;
-   margin-right: auto;
-}
-
-/* Style the user card container */
-.user-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 53px;
-    padding: 46px;
-    align-content: center;
-    align-items: stretch;
-    flex-wrap: nowrap;
-
-}
-
-/* Style rows */
-.row {
-    display: flex; /* Display cards in a row */
-   gap: 50px;
-
-}
-
-/* Style individual cards */
-.card {
-    flex: 1;
-    border: 1px solid #ccc;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(15, 207, 224, 0.539);
-    max-width: 200px;
-    gap:20px;
-}
-
-/* Style card headings */
-.card-heading {
-    font-size: 18px;
-    margin: 0;
-}
-
-/* Style card content */
-.card-content {
-    font-size: 24px;
-    margin-top: 10px;
-}
-
-/* Optional: Add some additional styling */
-.user-card {
-    max-width: 500px;
-    margin: 0 auto;
-
-}
-
-
-        /* Reset some default styles */
-body, html {
-    margin: 0;
-    padding: 0;
-}
-
-/* Style the user card container */
-.user-card2 {
-    text-align: center;
-}
-
-/* Style the user avatar (round image) */
-.user-avatar img {
-    width: 150px; /* Adjust the image size as needed */
-    height: 150px;
-    border-radius: 50%; /* Make it round */
-}
-
-/* Style the username */
-.username {
-    font-size: 24px; /* Adjust the font size as needed */
-    margin-top: 10px; /* Add space below the image */
-}
-
-/* Optional: Add some additional styling */
-.user-card2 {
-    border: 1px solid #ccc;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(37, 35, 169, 0.2);
-    max-width: 300px; /* Adjust the card's width as needed */
-    margin: 0 auto; /* Center the card on the page */
-}
-
-        
-        .insta-container{
-            border: 1px solid ;
-            padding: 10px;
-
-
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
         }
-        .usernameandchanneidformcointainer {
+
+        .navbar li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form Container Styles */
+        .usernameandchannelidformcontainer {
             display: flex;
-        margin-right: 20px;
-        height: auto;
-        justify-content: center;
-}
-        
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-        .usernameandchanneidformcointainer form {
-            background-color: #7f1e1e00;
-        padding: 20px;
-        border-radius: 0px;
-        box-shadow: 0 20px 20px rgb(255 255 255 / 0%);
+        .usernameandchannelidformcontainer form {
+            background-color: #17627000;
+        padding: 38px;
+        border-radius: 46px;
+        box-shadow: 1px 12px 13px 0px rgb(255 11 11 / 28%);
         text-align: center;
         }
+        
 
-        .usernameandchanneidformcointainer label,
-        .usernameandchanneidformcointainer input,
-        .usernameandchanneidformcointainer button {
+        .usernameandchannelidformcontainer label,
+        .usernameandchannelidformcontainer input,
+        .usernameandchannelidformcontainer button {
             display: block;
             margin-bottom: 10px;
         }
 
-        .usernameandchanneidformcointainer label {
+        .usernameandchannelidformcontainer label {
             font-weight: bold;
+            font-size: 18px;
         }
 
-        .usernameandchanneidformcointainer input[type="text"] {
+        .usernameandchannelidformcontainer input[type="text"] {
             width: 100%;
             padding: 10px;
             border: 1px solid #18c3b8;
@@ -183,7 +80,7 @@ body, html {
             font-size: 16px;
         }
 
-        .usernameandchanneidformcointainer button[type="submit"] {
+        .usernameandchannelidformcontainer button[type="submit"] {
             background-color: #007bff;
             color: #fff;
             border: none;
@@ -194,9 +91,175 @@ body, html {
             transition: background-color 0.3s ease;
         }
 
-        .usernameandchanneidformcointainer button[type="submit"]:hover {
+        .usernameandchannelidformcontainer button[type="submit"]:hover {
             background-color: #0056b3;
         }
+
+        /* User Card Styles */
+        .user-card {
+            max-width: 508px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 38px;
+    padding: 24px;
+    padding: 18px;
+    border-radius: 141px;
+    color: #123c4824;
+    border-radius: 151px;
+    box-shadow: inset 1px 1px 20px rgb(32 239 247 / 57%);
+    text-align: center;
+    color: #10303a;
+    justify-content: space-around
+   
+}
+
+        .user-avatar img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .username {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Card Styling */
+        .card {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(15, 207, 224, 0.539);
+            max-width: 200px;
+            gap: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-heading {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .card-content {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        /* Instagram Container Styles */
+        
+
+        /* Instagram Section Styling */
+        .insta-container h1 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* YouTube Container Styles */
+        
+        /* YouTube Section Styling */
+        .youtube-container h1 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Toggle Switch Styles */
+        .toggle-switch {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Dark Mode Toggle Styles */
+        #dark-mode-toggle {
+            display: none;
+        }
+
+        .toggle-switch label {
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        #dark-mode-toggle:checked + label {
+            background-color: #333;
+        }
+
+        /* Container for Instagram and YouTube sections */
+        .sections-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 120px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Instagram and YouTube sections */
+        .insta-container, .youtube-container {
+            flex: 1;
+        min-width: 345px;
+        max-width: 395px;
+        padding: 24px;
+        border-radius: 119px;
+        box-shadow: 0 10px 20px rgb(34 220 220 / 56%);
+        background-color: #f3f3f3;
+    }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sections-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .insta-container, .youtube-container {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+        .insta-container .row,
+        .youtube-container .row {
+            display: flex; /* Display the cards in a row */
+            justify-content: space-between; /* Space them evenly */
+        }
+
+        /* Adjust the width of the cards to fit two side by side */
+        .insta-container .row .card,
+        .youtube-container .row .card {
+            flex: 1; /* Make them take equal space */
+            max-width: calc(50% - 10px); /* Set the maximum width (minus gap) for each card */
+        }
+        /* Add styles to the engagement rate paragraph (p1) */
+/* Add unique styles to the engagement rate paragraph (p1) */
+.engagement-rate {
+    font-size: 50px;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin-top: -53px;
+    text-transform: uppercase;
+    border: 1px solid #ff6b6b;
+    padding: 56px;
+    border-radius: 120px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+}
+
+
     </style>
 </head>
 <body class="light-mode">
@@ -213,202 +276,187 @@ body, html {
             <input type="checkbox" id="dark-mode-toggle">
             <label for="dark-mode-toggle">Dark Mode</label>
         </div>
-    <div class="usernameandchanneidformcointainer">
-        <form method="POST" action="http://localhost:3000/dataobtain">
-            <label for="instagramUsername">Instagram Channel Name:</label>
-            <input type="text" id="instagramUsername" name="instagramUsername" required placeholder="Instagram @username">
+        <div class="usernameandchannelidformcontainer">
+            <form method="POST" action="http://localhost:3030/dataobtain">
+                <label for="instagramUsername">Instagram Channel Name:</label>
+                <input type="text" id="instagramUsername" name="instagramUsername" required placeholder="Instagram @username">
 
-            <label for="youtubeChannelId">YouTube Channel ID:</label>
-            <input type="text" id="youtubeChannelId" name="youtubeChannelId" required placeholder="YouTube channel-id">
-            <button type="submit">Analyze</button>
-            <p id="wait-message" style="display: none;">Please wait for a few minutes...</p>
-        </form>
-    </div>
-   
- <!-- insta template part -->
-    <div class="insta-container">
-        <section class="content">
-            <div class="user-card2">
-                <div class="user-avatar">
-                    <img src="https://www.pngmart.com/files/23/Insta-Logo-PNG-File.png" alt="User Avatar">
-                </div>
-                <div class="user-info">
-                    <p class="username"><% if (locals.instagramData) { %>
-                        
-                        <p>@<%= locals.instagramData.username %></p>
-                       
-                        <% } %></p>
-                </div>
-        </section>
-        <section class="4-cards">
-            <div class="user-card">
-                <div class="row">
-                    <div class="card">
-                        <h2 class="card-heading">Followers</h2>
-                        <p class="card-content"><% if (locals.instagramData) { %>
-                        
-                            <p><%= locals.instagramData.followers %></p>
-                            
-                            <% } %></p>
-                    </div>
-                    <div class="card">
-                        <h2 class="card-heading">toatl Likes</h2>
-                        <p class="card-content">
-                            <% if (locals.instagramData) { %>
-                        
-                                <p><%= locals.instagramData.total_likes %></p>
-                              
+                <label for="youtubeChannelId">YouTube Channel ID:</label>
+                <input type="text" id="youtubeChannelId" name="youtubeChannelId" required placeholder="YouTube channel-id">
+                <button type="submit">Analyze</button>
+                <p id="wait-message" style="display: none;">Please wait for a few minutes...</p>
+            </form>
+        </div>
+        <!-- Container for Instagram and YouTube sections -->
+        <div class="sections-container">
+            <!-- Instagram Section -->
+            <div class="insta-container">
+                <section class="content">
+                        <h1>Instagram Data</h1>
+                        <div class="user-card">
+                            <div class="user-avatar">
+                                <img src="https://www.pngmart.com/files/23/Insta-Logo-PNG-File.png" alt="User Avatar">
+                            </div>
+                            <div class="username">
+                                <% if (locals.instagramData) { %>
+                                    @<%= locals.instagramData.username %>
                                 <% } %>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="card">
-                        <h2 class="card-heading">total Comments</h2>
-                        <p class="card-content"><% if (locals.instagramData) { %>
-                        
-                            <p><%= locals.instagramData.total_comments %></p>
-                            
-                            <% } %></p>
-                    </div>
-                    <div class="card">
-                        <h2 class="card-heading">No. of Posts</h2>
-                        <p class="card-content"><% if (locals.instagramData) { %>
-                        
-                            <p><%= locals.instagramData.total_posts %></p>
-                           
-                            <% } %></p>
-                    </div>
-                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card">
+                                    <h2 class="card-heading">Followers</h2>
+                                    <p class="card-content">
+                                        <% if (locals.instagramData) { %>
+                                            <%= locals.instagramData.followers %>
+                                        <% } %>
+                                    </p>
+                                </div>
+                                <div class="card">
+                                    <h2 class="card-heading">Total Likes</h2>
+                                    <p class="card-content">
+                                        <% if (locals.instagramData) { %>
+                                            <%= locals.instagramData.total_likes %>
+                                        <% } %>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card">
+                                    <h2 class="card-heading">Total Comments</h2>
+                                    <p class="card-content">
+                                        <% if (locals.instagramData) { %>
+                                            <%= locals.instagramData.total_comments %>
+                                        <% } %>
+                                    </p>
+                                </div>
+                                <div class="card">
+                                    <h2 class="card-heading">No. of Posts</h2>
+                                    <p class="card-content">
+                                        <% if (locals.instagramData) { %>
+                                            <%= locals.instagramData.total_posts %>
+                                        <% } %>
+                                    </p>
+                                </div>
+                            </div>
+                            <h1>Engagement Rate</h1>
+                            <p class = "engagement-rate">
+                                <% if (locals.instagramData) { %>
+                                    <%= locals.instagramData.engagement_rate %>
+                                <% } %>
+                            </p>
+                        </div>
+                    
+                </section>
             </div>
-        </section>
-        <div class="user-card">
-        <h1>ENGAGEMENT RATE</h1>
-        
-            <h1><% if (locals.instagramData) { %>
-                        
-                <p><%= locals.instagramData.engagement_rate %></p>
-               
-                <% } %></h1>
-    </div>
-        
-    </div>
-<div class ="youtube-container">
-<!-- youtube template part -->
-    <div class="insta-container">
-        <section class="content">
-            <div class="user-card2">
-                <div class="user-avatar">
-                    <img src="https://cdn.pixabay.com/photo/2021/12/10/16/38/youtube-6860916_1280.png" alt="User Avatar">
-                </div>
-                <div class="user-info">
-                    <p class="username"> <% if (locals.youtubeData) { %>
-                        
-                        <p> <%= locals.youtubeData.channelName %></p>
-                      
-                        <% } %></p>
-                </div>
-        </section>
-        <section class="4-cards">
-            <div class="user-card">
-                <div class="row">
-                    <div class="card">
-                        <h2 class="card-heading">subscibers</h2>
-                        <p class="card-content"><% if (locals.youtubeData) { %>
-                        
-                            <p> <%= locals.youtubeData.subscribersCount %></p>
-                          
-                            <% }%></p>
-                    </div>
-                    <div class="card">
-                        <h2 class="card-heading">Avg Likes</h2>
-                        <p class="card-content"><% if (locals.youtubeData) { %>
-                        
-                        <p> <%= locals.youtubeData.averagePostLikes %></p>
-                      
-                        <% }%></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="card">
-                        <h2 class="card-heading">Avg Comments</h2>
-                        <p class="card-content"><% if (locals.youtubeData) { %>
-                        
-                        <p> <%= locals.youtubeData.averagePostComments %></p>
-                      
-                        <% }%></p>
-                    </div>
-                    <div class="card">
-                        <h2 class="card-heading">No. of Posts</h2>
-                        <p class="card-content"><% if (locals.youtubeData) { %>
-                        
-                        <p> <%= locals.youtubeData.numberOfPosts %></p>
-                      
-                        <% }%></p>
-                    </div>
-                </div>
+            <!-- YouTube Section -->
+            <div class="youtube-container">
+                <section class="content">
+                 
+                        <h1>YouTube Data</h1>
+                        <div class="user-card">
+                            <div class="user-avatar">
+                                <img src="https://cdn.pixabay.com/photo/2021/12/10/16/38/youtube-6860916_1280.png" alt="User Avatar">
+                            </div>
+                            <div class="username">
+                                <% if (locals.youtubeData) { %>
+                                    <%= locals.youtubeData.channelName %>
+                                <% } %>
+                            </div>
+                            <div class="row">
+                                <div class="card">
+                                    <h2 class="card-heading">Subscribers</h2>
+                                    <p class="card-content">
+                                        <% if (locals.youtubeData) { %>
+                                            <%= locals.youtubeData.subscribersCount %>
+                                        <% } %>
+                                    </p>
+                                </div>
+                                <div class="card">
+                                    <h2 class="card-heading">Avg Likes</h2>
+                                    <p class="card-content">
+                                        <% if (locals.youtubeData) { %>
+                                            <%= locals.youtubeData.averagePostLikes %>
+                                        <% } %>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card">
+                                    <h2 class="card-heading">Avg Comments</h2>
+                                    <p class="card-content">
+                                        <% if (locals.youtubeData) { %>
+                                            <%= locals.youtubeData.averagePostComments %>
+                                        <% } %>
+                                    </p>
+                                </div>
+                                <div class="card">
+                                    <h2 class="card-heading">No. of Posts</h2>
+                                    <p class="card-content">
+                                        <% if (locals.youtubeData) { %>
+                                            <%= locals.youtubeData.numberOfPosts %>
+                                        <% } %>
+                                    </p>
+                                </div>
+                            </div>
+                            <h1>Engagement Rate</h1>
+                            <p class="engagement-rate">
+                                <% if (locals.youtubeData) { %>
+                                    <%= locals.youtubeData.engagementRate %>
+                                <% } %>
+                            </p>
+                        </div>
+                    
+                </section>
             </div>
-        </section>
-        <div class="user-card">
-        <h1>ENGAGEMENT RATE</h1>
-        
-            <h1><% if (locals.youtubeData) { %>
-                        
-                        <p> <%= locals.youtubeData.engagementRate%></p>
-                      
-                        <% }%></h1>
+        </div>
     </div>
-        
-    </div>
-</div>
-</div>
-<script>
-    // Function to toggle between light and dark mode
-    function toggleDarkMode() {
-        const body = document.body;
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
+    <script>
+        // Function to toggle between light and dark mode
+        function toggleDarkMode() {
+            const body = document.body;
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
 
-        darkModeToggle.addEventListener('change', () => {
-            if (darkModeToggle.checked) {
+            darkModeToggle.addEventListener('change', () => {
+                if (darkModeToggle.checked) {
+                    body.classList.add('dark-mode');
+                    body.classList.remove('light-mode');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    body.classList.add('light-mode');
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+
+            // Check the user's preference from the previous session (if any)
+            const userPreference = localStorage.getItem('theme');
+            if (userPreference === 'dark') {
+                darkModeToggle.checked = true;
                 body.classList.add('dark-mode');
-                body.classList.remove('light-mode');
-                localStorage.setItem('theme', 'dark');
             } else {
                 body.classList.add('light-mode');
-                body.classList.remove('dark-mode');
-                localStorage.setItem('theme', 'light');
             }
-        });
-
-        // Check the user's preference from previous session (if any)
-        const userPreference = localStorage.getItem('theme');
-        if (userPreference === 'dark') {
-            darkModeToggle.checked = true;
-            body.classList.add('dark-mode');
-        } else {
-            body.classList.add('light-mode');
         }
-    }
 
-    // Call the function to initialize the toggle
-    toggleDarkMode();
-    // Function to handle form submission
-function handleSubmit() {
-  // Show the "Please wait" message
-  const waitMessage = document.getElementById('wait-message');
-  waitMessage.style.display = 'block';
+        // Call the function to initialize the toggle
+        toggleDarkMode();
 
-  // Disable the "Analyze" button to prevent multiple submissions
-  const analyzeButton = document.getElementById('analyze-button');
-  analyzeButton.disabled = true;
+        // Function to handle form submission
+        function handleSubmit() {
+            // Show the "Please wait" message
+            const waitMessage = document.getElementById('wait-message');
+            waitMessage.style.display = 'block';
 
-  // You can continue with the form submission here...
-}
+            // Disable the "Analyze" button to prevent multiple submissions
+            const analyzeButton = document.querySelector('form button[type="submit"]');
+            analyzeButton.disabled = true;
 
-// Attach the handleSubmit function to the form submission
-const form = document.querySelector('form');
-form.addEventListener('submit', handleSubmit);
+            // You can continue with the form submission here...
+        }
 
-</script>
+        // Attach the handleSubmit function to the form submission
+        const form = document.querySelector('form');
+        form.addEventListener('submit', handleSubmit);
+    </script>
 </body>
 </html>
