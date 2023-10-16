@@ -91,7 +91,7 @@ app.post('/dataobtain', async (req, res) => {
   
     try {
       // Fetch data from Instagram API
-      const instagramResponse = await axios.get(`http://127.0.0.1:5000/instadata?username=${instagramUsername}`);
+      const instagramResponse = await axios.get(`https://abhishekw1w21.pythonanywhere.com/instadata?username=ravitechseries${instagramUsername}`);
       const instagramData = instagramResponse.data;
   
       // Fetch data from YouTube API
